@@ -17,18 +17,21 @@
         changed = green
         untracked = cyan
 [alias]
-	ls = log --pretty=format:'%C(yellow)%p..%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8 --no-merges
+	
+	lsa = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8
+	ls = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8 --no-merges
 	st = status -s
 	a = add
 	aa = add .
 	cm = commit -m
 	unstage = reset HEAD --
-	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
+	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cD)%Creset%n%w(80,8,8)%s' --graph --date=iso
 	histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
         log = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
 	changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
 	ull = pull
 	co = checkout
+	ush = push
 
 [merge]
 	tool = meld
@@ -36,3 +39,5 @@
         autocorrect = 1
 [push]
 	default = simple
+[core]
+	autocrlf = true
