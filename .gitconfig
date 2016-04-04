@@ -17,7 +17,6 @@
         changed = green
         untracked = cyan
 [alias]
-	
 	lsa = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8
 	ls = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8 --no-merges
 	st = status -s
@@ -32,12 +31,19 @@
 	ull = pull
 	co = checkout
 	ush = push
-
-[merge]
-	tool = meld
+	df = diff
+	dfc = diff --cached
 [help]
         autocorrect = 1
 [push]
 	default = simple
 [core]
 	autocrlf = true
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe
+[diff]
+	tool = meld
+[difftool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe
