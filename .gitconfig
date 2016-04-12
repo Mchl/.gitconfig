@@ -17,6 +17,7 @@
         changed = green
         untracked = cyan
 [alias]
+	
 	lsa = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8
 	ls = log --pretty=format:'%C(yellow)%h %C(white dim)%cd %<|(49,trunc)%an %C(reset)%s' --date=short --abbrev=8 --no-merges
 	st = status -s
@@ -33,6 +34,8 @@
 	ush = push
 	df = diff
 	dfc = diff --cached
+	issues = !sh -c \"git log $1 --oneline | grep -o \\\"ISSUE-[0-9]\\+\\\" | sort -u\"
+
 [help]
         autocorrect = 1
 [push]
