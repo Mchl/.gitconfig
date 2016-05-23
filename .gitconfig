@@ -35,6 +35,7 @@
 	df = diff
 	dfc = diff --cached
 	issues = !sh -c \"git log $1 --oneline | grep -o \\\"ISSUE-[0-9]\\+\\\" | sort -u\"
+	branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%ai %ar by %an\" $branch | head -n 1` \t$branch; done | sort -r"
 
 [help]
         autocorrect = 1
