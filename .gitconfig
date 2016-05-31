@@ -27,7 +27,7 @@
 	unstage = reset HEAD --
 	hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cD)%Creset%n%w(80,8,8)%s' --graph --date=iso
 	histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
-        log = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+	log = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
 	changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
 	ull = pull
 	co = checkout
@@ -35,6 +35,8 @@
 	df = diff
 	dfc = diff --cached
 	issues = !sh -c \"git log $1 --oneline | grep -o \\\"ISSUE-[0-9]\\+\\\" | sort -u\"
+	branches = branch --list
+	tags = !sh -c \"git tag --list -n1 | sort -n\"
 
 [help]
         autocorrect = 1
