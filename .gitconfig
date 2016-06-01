@@ -38,6 +38,7 @@
 	branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%ai %ar by %an\" $branch | head -n 1` \t$branch; done | sort -r"
 	branches = branch --list
 	tags = !sh -c \"git tag --list -n1 | sort -n\"
+	delbranch = !sh -c \"git branch -D $1 && git push origin :$1\"
 
 [help]
         autocorrect = 1
