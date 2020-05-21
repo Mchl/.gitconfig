@@ -39,6 +39,8 @@
 	branches = branch --list
 	tags = !sh -c \"git tag --list -n1 | sort -n\"
 	delbranch = !sh -c \"git branch -D $1 && git push origin :$1\"
+	pf = push --force-with-lease
+
 
 [help]
         autocorrect = 1
