@@ -56,3 +56,9 @@
 	tool = meld
 [difftool "meld"]
 	path = C:\\Program Files (x86)\\Meld\\Meld.exe
+	
+[rerere]
+	enabled = true
+[branch]
+	autosetuprebase = always
+	autosetupmerge = false
